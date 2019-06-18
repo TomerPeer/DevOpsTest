@@ -4,8 +4,6 @@ var visits = 0;
 http.createServer( function(request, response) {
 
    console.log('New Connection');
-   /*console.log(request.method);
-   response.end();*/
 
   switch(request.method){
     case('POST'):
@@ -21,7 +19,7 @@ http.createServer( function(request, response) {
     default:
         break;
   }
-  
+
   response.end();
 }).listen(8080);
 
