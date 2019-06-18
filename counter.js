@@ -1,5 +1,5 @@
 var http = require('http');
-var visits = 0;
+var postRequests = 0;
 
 http.createServer( function(request, response) {
 
@@ -7,14 +7,12 @@ http.createServer( function(request, response) {
 
   switch(request.method){
     case('POST'):
-        visits++;
-        console.log('POST');
+    postRequests++;
         break;
-    case('GET'):
-        console.log('GET');   
+    case('GET'):  
         response.writeHead(200, { 'Content-Type':'text/plain' } );
         response.write('Hello\n');
-        response.write('We have had '+visits+' visits');
+        response.write('We have had '+postRequests+' POST requests');
         break;
     default:
         break;
